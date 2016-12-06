@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.ssau.gasstation.GUI.controllers.DBWindowController">
+   <children>
+      <TabPane id="myTable" prefHeight="400.0" prefWidth="600" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="Автомобили">
+               <content>
+                  <TableView id="myTable" fx:id="car" prefHeight="400.0" prefWidth="600.0" stylesheets="@style.css">
+                    <columns>
+                      <TableColumn fx:id="carType" prefWidth="159" text="Марка автомобиля" />
+                      <TableColumn fx:id="tankVolume" prefWidth="159" text="Объем бака" />
+                      <TableColumn fx:id="carFuelType" prefWidth="159" text="Тип топлива" />
+                      <TableColumn fx:id="editCar" prefWidth="39" />
+                      <TableColumn fx:id="deleteCar" prefWidth="39" />
+                    </columns>
+                     <padding>
+                        <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                     </padding>
+                  </TableView>
+               </content></Tab>
+          <Tab text="Типы топлива" >
+            <content>
+                <TableView id="myTable" fx:id="fuel" prefHeight="400.0" prefWidth="600.0">
+                    <columns>
+                        <TableColumn fx:id="fuelType" prefWidth="238" text="Тип топлива" />
+                        <TableColumn fx:id="cost" prefWidth="238" text="Цена" />
+                        <TableColumn fx:id="editFuel" prefWidth="39" />
+                        <TableColumn fx:id="deleteFuel" prefWidth="39" />
+                        <TableColumn prefWidth="15" />
+                    </columns>
+                    <padding>
+                        <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                    </padding>
+                </TableView>
+            </content></Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</Pane>

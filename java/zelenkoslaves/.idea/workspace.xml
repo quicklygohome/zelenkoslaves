@@ -2,19 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="713eac60-3fb1-4d7f-bab8-804b8eee013d" name="Default" comment="выф">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/edu/ssau/gasstation/GUI/components/edit.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/edu/ssau/gasstation/DB/DBHelper.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/edu/ssau/gasstation/GUI/Main.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/edu/ssau/gasstation/GUI/components/EditButtonCell.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/edu/ssau/gasstation/GUI/controllers/DBWindowController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/edu/ssau/gasstation/GUI/model/CarRecord.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/edu/ssau/gasstation/GUI/view/style.css" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/zelenkoslaves/edu/ssau/gasstation/GUI/DBWindowController.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/zelenkoslaves/edu/ssau/gasstation/GUI/db_window.fxml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/edu/ssau/gasstation/GUI/ButtonCell.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/edu/ssau/gasstation/GUI/DBWindowController.java" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/edu/ssau/gasstation/GUI/db_window.fxml" afterPath="$PROJECT_DIR$/src/edu/ssau/gasstation/GUI/view/db_window.fxml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../UML/UML.mdj" afterPath="$PROJECT_DIR$/../../UML/UML.mdj" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -519,16 +506,24 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1480843137124</updated>
-      <workItem from="1481051417045" duration="658000" />
+      <workItem from="1481051417045" duration="762000" />
     </task>
+    <task id="LOCAL-00001" summary="выф">
+      <created>1481052186670</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1481052186670</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="658000" />
+    <option name="totallyTimeSpent" value="762000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="-10" width="1366" height="778" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -540,7 +535,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3411215" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32928678" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32866043" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.47507787" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.47507787" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
