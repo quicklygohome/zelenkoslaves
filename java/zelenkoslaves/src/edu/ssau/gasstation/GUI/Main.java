@@ -1,5 +1,6 @@
 package edu.ssau.gasstation.GUI;
 
+import com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException;
 import edu.ssau.gasstation.DB.DBHelper;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -30,7 +31,10 @@ public class Main extends Application{
             //ResultSet rs = db.executeQuery("INSERT INTO fuel (fuel_name) VALUES(АИ-76);");
             boolean succes = db.insertFuel("АИ-76", 15.0);
             db.executeQuery("SELECT * FROM fuel;");
-        } catch (SQLException e) {
+        }catch (MySQLIntegrityConstraintViolationException e){
+            //todo отобразить окно с сообщение о дублировании записи
+        }
+        catch (SQLException e) {
             e.printStackTrace();
         }
         launch(args);

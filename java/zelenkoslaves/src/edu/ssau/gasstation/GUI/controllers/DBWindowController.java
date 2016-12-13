@@ -47,6 +47,8 @@ public class DBWindowController {
         //fillData();
         editCar.setCellValueFactory(param -> new SimpleBooleanProperty(param.getValue() != null));
         editCar.setCellFactory(param -> new EditButtonCell(data));
+        deleteCar.setCellValueFactory(param -> new SimpleBooleanProperty(param.getValue() != null));
+        deleteCar.setCellFactory(param -> new EditButtonCell(data));
         car.setItems(data);
     }
 }
