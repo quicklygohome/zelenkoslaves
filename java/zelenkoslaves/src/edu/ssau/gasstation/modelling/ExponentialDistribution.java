@@ -1,4 +1,4 @@
-package azs.modelling;
+package edu.ssau.gasstation.modelling;
 
 import java.util.Random;
 
