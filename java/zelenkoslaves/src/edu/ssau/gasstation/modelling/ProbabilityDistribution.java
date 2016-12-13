@@ -1,4 +1,4 @@
-package azs.modelling;
+package edu.ssau.gasstation.modelling;
 
 /**
  * Created by Sasha on 30.11.2016.
