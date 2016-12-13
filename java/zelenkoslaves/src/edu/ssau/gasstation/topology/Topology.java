@@ -23,4 +23,15 @@ public class Topology {
         }
         else return null;
     }
+
+    public TopologyItem[][] getTopology(){
+        return this.topology;
+    }
+
+    public int getWidth(){
+        return this.topology.length;
+    }
+    public int getHeight(){
+        return this.topology[0].length;
+    }
 }

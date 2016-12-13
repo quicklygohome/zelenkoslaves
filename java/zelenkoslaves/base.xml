@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Topology>
+  <Size>
+    <Vertical>10</Vertical>
+    <Horizontal>10</Horizontal>
+  </Size>
+  <Objects>
+    <FillingStation>
+      <x>1</x>
+      <y>1</y>
+      <FuelType>228</FuelType>
+    </FillingStation>
+    <FillingStation>
+      <x>1</x>
+      <y>2</y>
+      <FuelType>227</FuelType>
+    </FillingStation>
+    <FillingStation>
+      <x>1</x>
+      <y>3</y>
+      <FuelType>229</FuelType>
+    </FillingStation>
+    <CashDesc>
+      <x>1</x>
+      <y>4</y>
+    </CashDesc>
+    <Entrance>
+      <x>1</x>
+      <y>5</y>
+    </Entrance>
+    <Exit>
+      <x>1</x>
+      <y>6</y>
+    </Exit>
+    <FuelTank>
+      <x>1</x>
+      <y>7</y>
+      <FuelType>228</FuelType>
+    </FuelTank>
+    <FuelTank>
+      <x>1</x>
+      <y>8</y>
+      <FuelType>229</FuelType>
+    </FuelTank>
+  </Objects>
+</Topology>
