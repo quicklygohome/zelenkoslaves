@@ -2,12 +2,16 @@ package edu.ssau.gasstation.GUI;
 
 import com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException;
 import edu.ssau.gasstation.DB.DBHelper;
+import edu.ssau.gasstation.XMLHelper.XMLParser;
+import edu.ssau.gasstation.topology.Topology;
+import edu.ssau.gasstation.topology.TopologyItem;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
+import javax.xml.stream.XMLStreamException;
 import java.io.File;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -26,17 +30,20 @@ public class Main extends Application{
 
 
     public static void main(String[] args) {
-        DBHelper db = new DBHelper();
+        /*DBHelper db = new DBHelper();
         try {
+            //TopologyItem ti = XMLParser.getTopologyFromFile("result.xml").getTopologyItem(1, 1);
             //ResultSet rs = db.executeQuery("INSERT INTO fuel (fuel_name) VALUES(АИ-76);");
-            boolean succes = db.insertFuel("АИ-76", 15.0);
+            int id = db.getFuelID("АИ-96");
             db.executeQuery("SELECT * FROM fuel;");
         }catch (MySQLIntegrityConstraintViolationException e){
             //todo отобразить окно с сообщение о дублировании записи
         }
         catch (SQLException e) {
             e.printStackTrace();
-        }
+        } /*catch (XMLStreamException e) {
+            e.printStackTrace();
+        }*/
         launch(args);
     }
 }

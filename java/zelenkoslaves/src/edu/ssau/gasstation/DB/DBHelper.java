@@ -1,5 +1,7 @@
 package edu.ssau.gasstation.DB;
 
+import edu.ssau.gasstation.GUI.model.CarRecord;
+
 import java.io.UnsupportedEncodingException;
 import java.nio.charset.Charset;
 import java.sql.*;
@@ -28,15 +30,91 @@ public class DBHelper {
         }
     }
 
-    public ResultSet executeQuery(String query) throws SQLException {
-        return st.executeQuery(query);
+    public ResultSet getCarList() throws SQLException {
+        String query = "SELECT * FROM car;";
+        ResultSet rs = connect.prepareStatement(query).executeQuery();
+        return rs;
     }
 
-    public boolean insertFuel(String fuel_name, double fuel_cost) throws SQLException {
+    public ResultSet getFuelList() throws SQLException {
+        String query = "SELECT * FROM fuel;";
+        ResultSet rs = connect.prepareStatement(query).executeQuery();
+        return rs;
+    }
+
+    public int getMaxID(String table) throws SQLException {
+        String query = "SELECT max(" + table + "_id) FROM " + table + ";";
+        ResultSet rs = connect.prepareStatement(query).executeQuery();
+        rs.next();
+        return rs.getInt("max(" + table + "_id)");
+    }
+
+    public void insertFuel(String fuel_name, double fuel_cost) throws SQLException {
         String query = "INSERT INTO fuel(fuel_name, fuel_cost) VALUES(?, ?);";
         PreparedStatement ps = connect.prepareStatement(query);
         ps.setString(1, new String(fuel_name.getBytes(), Charset.forName("utf8")));
         ps.setDouble(2, fuel_cost);
-        return ps.execute();
+        ps.execute();
+    }
+
+    public void updateFuel(String fuel_name, double fuel_cost, int fuel_id) throws SQLException {
+        String query = "UPDATE fuel set fuel_name=?, fuel_cost=? where fuel_id=?";
+        PreparedStatement ps = connect.prepareStatement(query);
+        ps.setString(1, new String(fuel_name.getBytes(), Charset.forName("utf8")));
+        ps.setDouble(2, fuel_cost);
+        ps.setInt(3, fuel_id);
+        ps.execute();
+    }
+
+    public void deleteFuel(int fuelID) throws SQLException {
+        String query = "DELETE FROM fuel WHERE(fuel_id = ?);";
+        PreparedStatement ps = connect.prepareStatement(query);
+        ps.setInt(1, fuelID);
+        ps.execute();
+    }
+
+    public void insertCar(CarRecord cr) throws SQLException {
+        String car_name = cr.getCarType();
+        double car_tank_volume = cr.getTankVolume();
+        int fuel_id = getFuelID(cr.getFuelType());
+        String query = "INSERT INTO car(car_name, car_tank_volume, fuel_id) VALUES(?, ?, ?);";
+        PreparedStatement ps = connect.prepareStatement(query);
+        ps.setString(1, new String(car_name.getBytes(), Charset.forName("utf8")));
+        ps.setDouble(2, car_tank_volume);
+        ps.setInt(3, fuel_id);
+        ps.execute();
+    }
+
+    public void updateCar(String car_name, double car_tank_volume, int fuel_id, int car_id) throws SQLException {
+        String query = "UPDATE car set car_name=?, car_tank_volume=?, fuel_id=? where car_id=?";
+        PreparedStatement ps = connect.prepareStatement(query);
+        ps.setString(1, new String(car_name.getBytes(), Charset.forName("utf8")));
+        ps.setDouble(2, car_tank_volume);
+        ps.setInt(3, fuel_id);
+        ps.execute();
+    }
+    public void deleteCar(int carID) throws SQLException {
+        String query = "DELETE FROM car WHERE(car_id = ?);";
+        PreparedStatement ps = connect.prepareStatement(query);
+        ps.setInt(1, carID);
+        ps.execute();
+    }
+
+    public int getFuelID(String fuel_name) throws SQLException {
+        String query = "SELECT fuel_id FROM fuel WHERE fuel_name=?";
+        PreparedStatement ps = connect.prepareStatement(query);
+        ps.setString(1, fuel_name);
+        ResultSet rs = ps.executeQuery();
+        rs.next();
+        return rs.getInt("fuel_id");
+    }
+
+    public String getFuelName(int fuel_id) throws SQLException {
+        String query = "SELECT fuel_name FROM fuel WHERE fuel_id=?";
+        PreparedStatement ps = connect.prepareStatement(query);
+        ps.setInt(1, fuel_id);
+        ResultSet rs = ps.executeQuery();
+        rs.next();
+        return rs.getString("fuel_name");
     }
 }

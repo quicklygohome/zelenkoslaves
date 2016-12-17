@@ -17,11 +17,11 @@ import edu.ssau.gasstation.topology.TopologyItem;
 
 public class XMLWriter {
 
-  public static void write(Topology topology) {
+  public static void write(Topology topology, String fileName) {
     try {
       TopologyItem[][] items = topology.getTopology();
       XMLOutputFactory output = XMLOutputFactory.newInstance();
-      XMLStreamWriter writer = output.createXMLStreamWriter(new FileWriter("result.xml"));
+      XMLStreamWriter writer = output.createXMLStreamWriter(new FileWriter(fileName));
       writer.writeStartDocument("1.0");
       writer.writeCharacters("\n");
       writer.writeStartElement("Topology");

@@ -1,8 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
 <?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.ssau.gasstation.GUI.controllers.DBWindowController">
    <children>
@@ -10,33 +20,85 @@
         <tabs>
           <Tab text="Автомобили">
                <content>
-                  <TableView id="myTable" fx:id="car" prefHeight="400.0" prefWidth="600.0" stylesheets="@style.css">
-                    <columns>
-                      <TableColumn fx:id="carType" prefWidth="159" text="Марка автомобиля" />
-                      <TableColumn fx:id="tankVolume" prefWidth="159" text="Объем бака" />
-                      <TableColumn fx:id="carFuelType" prefWidth="159" text="Тип топлива" />
-                      <TableColumn fx:id="editCar" prefWidth="39" />
-                      <TableColumn fx:id="deleteCar" prefWidth="39" />
-                    </columns>
-                     <padding>
-                        <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
-                     </padding>
-                  </TableView>
+                  <VBox>
+                     <children>
+                        <TableView id="myTable" fx:id="car" prefHeight="300.0" prefWidth="600.0" stylesheets="@style.css">
+                          <columns>
+                            <TableColumn fx:id="carType" prefWidth="159" text="Марка автомобиля" />
+                            <TableColumn fx:id="tankVolume" prefWidth="159" text="Объем бака" />
+                            <TableColumn fx:id="carFuelType" prefWidth="159" text="Тип топлива" />
+                            <TableColumn fx:id="editCar" prefWidth="39" />
+                            <TableColumn fx:id="deleteCar" prefWidth="39" />
+                          </columns>
+                           <padding>
+                              <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                           </padding>
+                        </TableView>
+                         <HBox>
+                            <children>
+                                <TextField fx:id="addCarName" prefHeight="26.0" prefWidth="159.0">
+                                     <opaqueInsets>
+                                        <Insets />
+                                     </opaqueInsets>
+                                     <HBox.margin>
+                                        <Insets left="15.0" top="5.0" />
+                                     </HBox.margin>
+                                    </TextField>
+                                <TextField fx:id="addTankVolume" prefHeight="26.0" prefWidth="159.0">
+                                 <HBox.margin>
+                                    <Insets top="5.0" />
+                                 </HBox.margin></TextField>
+                              <ChoiceBox fx:id="addFuelType" prefWidth="159.0">
+                                 <HBox.margin>
+                                    <Insets top="5.0" />
+                                 </HBox.margin></ChoiceBox>
+                                <Button fx:id="addCar">
+                                 <HBox.margin>
+                                    <Insets left="5.0" top="5.0" />
+                                 </HBox.margin></Button>
+                            </children>
+                         </HBox>
+                     </children>
+                  </VBox>
                </content></Tab>
-          <Tab text="Типы топлива" >
+          <Tab text="Типы топлива">
             <content>
-                <TableView id="myTable" fx:id="fuel" prefHeight="400.0" prefWidth="600.0">
-                    <columns>
-                        <TableColumn fx:id="fuelType" prefWidth="238" text="Тип топлива" />
-                        <TableColumn fx:id="cost" prefWidth="238" text="Цена" />
-                        <TableColumn fx:id="editFuel" prefWidth="39" />
-                        <TableColumn fx:id="deleteFuel" prefWidth="39" />
-                        <TableColumn prefWidth="15" />
-                    </columns>
-                    <padding>
-                        <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
-                    </padding>
-                </TableView>
+                  <VBox>
+                     <children>
+                      <TableView id="myTable" fx:id="fuel" prefHeight="300.0" prefWidth="600.0">
+                          <columns>
+                              <TableColumn fx:id="fuelType" prefWidth="238" text="Тип топлива" />
+                              <TableColumn fx:id="cost" prefWidth="238" text="Цена" />
+                              <TableColumn fx:id="editFuel" prefWidth="39" />
+                              <TableColumn fx:id="deleteFuel" prefWidth="39" />
+                              <TableColumn prefWidth="15" />
+                          </columns>
+                          <padding>
+                              <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                          </padding>
+                      </TableView>
+                         <HBox>
+                             <children>
+                                 <TextField fx:id="addFuelName" prefHeight="26.0" prefWidth="238.0">
+                                     <opaqueInsets>
+                                         <Insets />
+                                     </opaqueInsets>
+                                     <HBox.margin>
+                                         <Insets left="15.0" top="5.0" />
+                                     </HBox.margin>
+                                 </TextField>
+                                 <TextField fx:id="addFuelCost" prefHeight="26.0" prefWidth="238.0">
+                                     <HBox.margin>
+                                         <Insets top="5.0" />
+                                     </HBox.margin></TextField>
+                                 <Button fx:id="addFuel">
+                                     <HBox.margin>
+                                         <Insets left="5.0" top="5.0" />
+                                     </HBox.margin></Button>
+                             </children>
+                         </HBox>
+                     </children>
+                  </VBox>
             </content></Tab>
         </tabs>
       </TabPane>

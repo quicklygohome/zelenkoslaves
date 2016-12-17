@@ -13,7 +13,7 @@ public class CarRecord {
     private final SimpleStringProperty fuelType;
     private final SimpleDoubleProperty tankVolume;
 
-    public CarRecord(int recordId, String carType, String fuelType, Double tankVolume) {
+    public CarRecord(int recordId, String carType, String fuelType, double tankVolume) {
         this.recordId = new SimpleIntegerProperty(recordId);
         this.carType = new SimpleStringProperty(carType);
         this.fuelType = new SimpleStringProperty(fuelType);

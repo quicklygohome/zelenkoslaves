@@ -3,6 +3,7 @@ package edu.ssau.gasstation.XMLHelper;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
+import java.util.HashSet;
 
 import javax.xml.stream.XMLInputFactory;
 import javax.xml.stream.XMLStreamException;
@@ -22,7 +23,7 @@ enum States {
 
 //edu/ssau/gasstation/parseHelper/XMLParser.java
 enum StatesSize { //I do not know what for this variable exists in my code
-Start
+  Start
 }
 
 
@@ -31,9 +32,13 @@ public class XMLParser {
   static ArrayList<ElementOfTopology> items = new ArrayList<>();
   static XMLStreamReader xmlr = null;
   static boolean correct = true;
+  private static final boolean DEBUG = true;
 
-  public static void main(String args[]) {
-    final String fileName = "result.xml";
+  public static Topology getTopologyFromFile(String fileName) throws XMLStreamException {
+    //final String fileName = "result.xml";
+    if (DEBUG) {
+      fileName = "result.xml";
+    }
     States state = States.Start; //in which of tags we are
 
     try {
@@ -78,7 +83,7 @@ public class XMLParser {
                     break;
                   }
                   xmlr.next();
-                  if (!xmlr.isEndElement()&& !xmlr.isStartElement() &&xmlr.getText().trim().equalsIgnoreCase("") && xmlr.hasNext()) {
+                  if (!xmlr.isEndElement() && !xmlr.isStartElement() && xmlr.getText().trim().equalsIgnoreCase("") && xmlr.hasNext()) {
                     xmlr.next();
                   }
                   try {
@@ -350,12 +355,12 @@ public class XMLParser {
       System.err.println("Unexpected error");
       correct = false;
     }
-
     checkItems();
-    if(correct) {
-      XMLWriter.write(result);
+    TopologyItem ti = result.getTopologyItem(1, 1);
+    if (correct) {
+      return result;
     }
-
+    else throw new XMLStreamException("Топология не корректно");
   }
 
   private static void checkItems() {
@@ -363,15 +368,65 @@ public class XMLParser {
     int height = result.getHeight();
     result = new Topology(height, width);
 
-    for(ElementOfTopology e:items) {
-      if(e.x > width || e.y > height || e.x < 0 || e.y < 0) {
+    for (ElementOfTopology e : items) {
+      if (e.x > width || e.y > height || e.x < 0 || e.y < 0) {
         correct = false;
-        System.err.println("Incorrect coordinates of "+e.toString());
+        System.err.println("Incorrect coordinates of " + e.toString());
       } else {
         result.setTopologyItem(e.item, e.x, e.y);
       }
       //TODO count Tanks, Offices, Dispensers, Exits, Enterances
     }
+  }
+
+  static private boolean checkCount(Topology result) {
+    int tanks = 0;//min 1 max 5
+    int offices = 0;//1
+    int dispensers = 0;//min 1
+    int exits = 0;//1
+    int enterances = 0;//1
+    TopologyItem[][] items = result.getTopology();
+    HashSet<Integer> fuelIds = new HashSet<>();
+    ArrayList<Dispenser> disps = new ArrayList<>(); //
+    for (int i = 0; i < items.length; i++) {
+      for (int j = 0; j < items[i].length; j++) {
+        if (items[i][j] == null)
+          continue;
+        else if (items[i][j] instanceof Dispenser) {
+          disps.add((Dispenser) items[i][j]);
+          dispensers++;
+        } else if (items[i][j] instanceof Entry) {
+          enterances++;
+        } else if (items[i][j] instanceof Exit) {
+          exits++;
+        } else if (items[i][j] instanceof Office) {
+          offices++;
+        } else if (items[i][j] instanceof Tank) {
+          Tank currentTank = (Tank) items[i][j];
+          fuelIds.add(currentTank.getFuelID());
+          tanks++;
+        } else {
+          //TODO undefined object
+          return false;
+        }
+      }
+    }
+    for (Dispenser d : disps) {
+      if (!fuelIds.contains(d.getFuelID())) {
+        //TODO unknown fuelType
+        return false;
+      }
+    }
+    if (offices != 1 ||
+      dispensers != 1 ||
+      exits != 1 ||
+      (tanks > 5 || tanks == 0) ||
+      enterances != 1
+      ) {
+      //TODO incorrect counts of items
+      return false;
+    }
+    return true;
   }
 
   static private void skip() {

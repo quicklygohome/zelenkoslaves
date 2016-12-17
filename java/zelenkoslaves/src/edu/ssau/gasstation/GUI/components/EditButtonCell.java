@@ -1,5 +1,6 @@
 package edu.ssau.gasstation.GUI.components;
 
+import edu.ssau.gasstation.DB.DBHelper;
 import edu.ssau.gasstation.GUI.model.CarRecord;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -10,6 +11,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
 import java.io.File;
+import java.sql.SQLException;
 
 
 /**
@@ -38,8 +40,15 @@ public class EditButtonCell extends TableCell<CarRecord, Boolean>{
             cellButton.graphicProperty().setValue(pic);
             cellButton.setPrefSize(17, 17);
             cellButton.setOnAction( ( ActionEvent event ) -> {
-                /*CarRecord currentCar = (CarRecord) EditButtonCell.this.getTableView().getItems().get(EditButtonCell.this.getIndex());
-                data.remove(currentCar);*/
+                CarRecord currentCar = (CarRecord) EditButtonCell.this.getTableView().getItems().get(EditButtonCell.this.getIndex());
+                DBHelper dbh = new DBHelper();
+                //dbh.updateCar(currentCar.getCarType());
+                //dbh.executeQuery("")
+                try {
+                    dbh.updateCar(currentCar.getCarType(), currentCar.getTankVolume(), dbh.getFuelID(currentCar.getFuelType()), currentCar.getRecordId());
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
                 //todo проверка и отправка изменений в БД
                 data.add(new CarRecord(2, "fa", "dsa", 10.0));
             } );
