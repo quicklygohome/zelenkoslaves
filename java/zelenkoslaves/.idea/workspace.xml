@@ -2,26 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="713eac60-3fb1-4d7f-bab8-804b8eee013d" name="Default" comment="выф">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/create.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/edu/ssau/gasstation/GUI/model/Record.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/zelenkoslaves/edu/ssau/gasstation/GUI/view/db_window.fxml" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/edu/ssau/gasstation/GUI/view/db_window.fxml" afterPath="$PROJECT_DIR$/src/edu/ssau/gasstation/GUI/view/DBWindow.fxml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/zelenkoslaves/edu/ssau/gasstation/DB/DBHelper.class" afterPath="$PROJECT_DIR$/out/production/zelenkoslaves/edu/ssau/gasstation/DB/DBHelper.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/edu/ssau/gasstation/GUI/controllers/mainWindowController.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/edu/ssau/gasstation/GUI/view/mainWindow.fxml" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/zelenkoslaves/edu/ssau/gasstation/GUI/controllers/add.png" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/edu/ssau/gasstation/GUI/controllers/add.png" afterPath="$PROJECT_DIR$/src/edu/ssau/gasstation/GUI/controllers/images/add.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/zelenkoslaves/edu/ssau/gasstation/GUI/Main.class" afterPath="$PROJECT_DIR$/out/production/zelenkoslaves/edu/ssau/gasstation/GUI/Main.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/zelenkoslaves/edu/ssau/gasstation/GUI/components/DeletButtonCell.class" afterPath="$PROJECT_DIR$/out/production/zelenkoslaves/edu/ssau/gasstation/GUI/components/DeletButtonCell.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/zelenkoslaves/edu/ssau/gasstation/GUI/components/EditButtonCell.class" afterPath="$PROJECT_DIR$/out/production/zelenkoslaves/edu/ssau/gasstation/GUI/components/EditButtonCell.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/zelenkoslaves/edu/ssau/gasstation/GUI/controllers/DBWindowController.class" afterPath="$PROJECT_DIR$/out/production/zelenkoslaves/edu/ssau/gasstation/GUI/controllers/DBWindowController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/zelenkoslaves/edu/ssau/gasstation/GUI/model/CarRecord.class" afterPath="$PROJECT_DIR$/out/production/zelenkoslaves/edu/ssau/gasstation/GUI/model/CarRecord.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/zelenkoslaves/edu/ssau/gasstation/GUI/model/FuelRecord.class" afterPath="$PROJECT_DIR$/out/production/zelenkoslaves/edu/ssau/gasstation/GUI/model/FuelRecord.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/zelenkoslaves/edu/ssau/gasstation/modelling/RandomFlow.class" afterPath="$PROJECT_DIR$/out/production/zelenkoslaves/edu/ssau/gasstation/modelling/RandomFlow.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/edu/ssau/gasstation/DB/DBHelper.java" afterPath="$PROJECT_DIR$/src/edu/ssau/gasstation/DB/DBHelper.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/edu/ssau/gasstation/GUI/Main.java" afterPath="$PROJECT_DIR$/src/edu/ssau/gasstation/GUI/Main.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/edu/ssau/gasstation/GUI/components/DeletButtonCell.java" afterPath="$PROJECT_DIR$/src/edu/ssau/gasstation/GUI/components/DeletButtonCell.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/edu/ssau/gasstation/GUI/components/EditButtonCell.java" afterPath="$PROJECT_DIR$/src/edu/ssau/gasstation/GUI/components/EditButtonCell.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/edu/ssau/gasstation/GUI/controllers/DBWindowController.java" afterPath="$PROJECT_DIR$/src/edu/ssau/gasstation/GUI/controllers/DBWindowController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/edu/ssau/gasstation/GUI/model/CarRecord.java" afterPath="$PROJECT_DIR$/src/edu/ssau/gasstation/GUI/model/CarRecord.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/edu/ssau/gasstation/GUI/model/FuelRecord.java" afterPath="$PROJECT_DIR$/src/edu/ssau/gasstation/GUI/model/FuelRecord.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -75,7 +63,7 @@
       <file leaf-file-name="DBHelper.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/edu/ssau/gasstation/DB/DBHelper.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="72">
+            <state relative-caret-position="-862">
               <caret line="51" column="0" lean-forward="true" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
               <folding>
                 <marker date="1482047996108" expanded="true" signature="1116:1133" ph="SELECT * FRO... car" />
@@ -98,54 +86,47 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DBWindowController.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/edu/ssau/gasstation/GUI/controllers/DBWindowController.java">
+      <file leaf-file-name="DeletButtonCell.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/edu/ssau/gasstation/GUI/components/DeletButtonCell.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-792">
-              <caret line="68" column="25" lean-forward="false" selection-start-line="68" selection-start-column="25" selection-end-line="68" selection-end-column="25" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="EditButtonCell.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/edu/ssau/gasstation/GUI/components/EditButtonCell.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="48" column="0" lean-forward="false" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
+            <state relative-caret-position="162">
+              <caret line="35" column="99" lean-forward="true" selection-start-line="35" selection-start-column="12" selection-end-line="35" selection-end-column="99" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CarRecord.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/edu/ssau/gasstation/GUI/model/CarRecord.java">
+      <file leaf-file-name="mainWindow.fxml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/edu/ssau/gasstation/GUI/view/mainWindow.fxml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="108">
-              <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+            <state relative-caret-position="126">
+              <caret line="37" column="31" lean-forward="false" selection-start-line="37" selection-start-column="31" selection-end-line="37" selection-end-column="31" />
+              <folding />
+            </state>
+          </provider>
+          <provider editor-type-id="JavaFX-Scene-Builder">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="mainWindowController.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/edu/ssau/gasstation/GUI/controllers/mainWindowController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="290">
+              <caret line="37" column="28" lean-forward="true" selection-start-line="37" selection-start-column="28" selection-end-line="37" selection-end-column="28" />
               <folding>
-                <element signature="e#884#885#0" expanded="true" />
-                <element signature="e#1092#1093#0" expanded="true" />
-                <element signature="e#1128#1129#0" expanded="true" />
-                <element signature="e#1333#1334#0" expanded="true" />
-                <element signature="e#1370#1371#0" expanded="true" />
-                <element signature="e#1583#1584#0" expanded="true" />
-                <element signature="e#1622#1623#0" expanded="true" />
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DeletButtonCell.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/edu/ssau/gasstation/GUI/components/DeletButtonCell.java">
+      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/edu/ssau/gasstation/GUI/Main.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="198">
-              <caret line="46" column="33" lean-forward="false" selection-start-line="46" selection-start-column="33" selection-end-line="46" selection-end-column="33" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+              <caret line="15" column="45" lean-forward="false" selection-start-line="15" selection-start-column="45" selection-end-line="15" selection-end-column="45" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -156,9 +137,9 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="XML Properties File" />
+        <option value="Interface" />
         <option value="JavaFXApplication" />
         <option value="Class" />
-        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -196,7 +177,6 @@
         <option value="$PROJECT_DIR$/src/edu/ssau/gasstation/XMLHelper/XMLWriter.java" />
         <option value="$PROJECT_DIR$/test.xml" />
         <option value="$PROJECT_DIR$/src/edu/ssau/gasstation/XMLHelper/XMLParser.java" />
-        <option value="$PROJECT_DIR$/src/edu/ssau/gasstation/GUI/Main.java" />
         <option value="$PROJECT_DIR$/src/edu/ssau/gasstation/GUI/view/style.css" />
         <option value="$PROJECT_DIR$/src/edu/ssau/gasstation/GUI/view/db_window.fxml" />
         <option value="$PROJECT_DIR$/src/edu/ssau/gasstation/GUI/view/DBWindow.fxml" />
@@ -211,6 +191,9 @@
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/c71ef283-2002-40fd-a138-b92abaa582b4/console.sql" />
         <option value="$PROJECT_DIR$/src/edu/ssau/gasstation/DB/DBHelper.java" />
         <option value="$PROJECT_DIR$/src/edu/ssau/gasstation/GUI/controllers/DBWindowController.java" />
+        <option value="$PROJECT_DIR$/src/edu/ssau/gasstation/GUI/Main.java" />
+        <option value="$PROJECT_DIR$/src/edu/ssau/gasstation/GUI/view/mainWindow.fxml" />
+        <option value="$PROJECT_DIR$/src/edu/ssau/gasstation/GUI/controllers/mainWindowController.java" />
       </list>
     </option>
   </component>
@@ -301,6 +284,28 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="XMLParser.java" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.ClassesTreeStructureProvider$PsiClassOwnerTreeNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="zelenkoslaves" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="zelenkoslaves" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gasstation" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="topology" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
@@ -443,6 +448,36 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="controllers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="images" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="zelenkoslaves" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="zelenkoslaves" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gasstation" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GUI" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="components" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -502,17 +537,17 @@
     <property name="js.eslint.eslintPackage" value="" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$" />
-      <recent name="$PROJECT_DIR$/src" />
-      <recent name="$PROJECT_DIR$/src/edu/ssau/gasstation/GUI/view" />
-      <recent name="$PROJECT_DIR$/src/edu/ssau/gasstation/GUI" />
-      <recent name="$PROJECT_DIR$/src/edu/ssau/gasstation/GUI/res" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/edu/ssau/gasstation/GUI/components" />
       <recent name="$PROJECT_DIR$/src/edu/ssau/gasstation/GUI/controllers" />
       <recent name="$PROJECT_DIR$/src" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/edu/ssau/gasstation/GUI/controllers/images" />
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/src" />
+      <recent name="$PROJECT_DIR$/src/edu/ssau/gasstation/GUI/view" />
+      <recent name="$PROJECT_DIR$/src/edu/ssau/gasstation/GUI" />
     </key>
   </component>
   <component name="RunManager" selected="Application.Main">
@@ -995,7 +1030,7 @@
       <workItem from="1481775014053" duration="6000" />
       <workItem from="1481775663704" duration="2114000" />
       <workItem from="1481968446458" duration="12405000" />
-      <workItem from="1481997324402" duration="5208000" />
+      <workItem from="1481997324402" duration="8513000" />
     </task>
     <task id="LOCAL-00001" summary="выф">
       <created>1481052186670</created>
@@ -1008,7 +1043,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="36385000" />
+    <option name="totallyTimeSpent" value="39690000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1366" height="749" extended-state="6" />
@@ -1025,17 +1060,17 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.40063092" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.40063092" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3280757" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4731861" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.48422712" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32866043" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329653" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.41060606" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29469696" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3438486" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -1134,30 +1169,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/edu/ssau/gasstation/GUI/controllers/DBWindowController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="648">
-          <caret line="50" column="65" lean-forward="false" selection-start-line="50" selection-start-column="65" selection-end-line="50" selection-end-column="65" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/edu/ssau/gasstation/GUI/components/DeletButtonCell.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="5" column="28" lean-forward="false" selection-start-line="5" selection-start-column="28" selection-end-line="5" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/edu/ssau/gasstation/topology/Dispenser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="4" column="13" lean-forward="false" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/edu/ssau/gasstation/topology/Exit.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
@@ -1320,14 +1331,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/edu/ssau/gasstation/GUI/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-52">
-          <caret line="32" column="10" lean-forward="false" selection-start-line="32" selection-start-column="10" selection-end-line="32" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/edu/ssau/gasstation/XMLHelper/XMLParser.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="18">
@@ -1481,16 +1484,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/edu/ssau/gasstation/GUI/components/DeletButtonCell.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="46" column="33" lean-forward="false" selection-start-line="46" selection-start-column="33" selection-end-line="46" selection-end-column="33" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar:///usr/java/jdk1.8.0_101/javafx-src.zip!/javafx/beans/property/StringPropertyBase.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
@@ -1504,13 +1497,13 @@
         <state relative-caret-position="108">
           <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
           <folding>
-            <element signature="e#884#885#0" expanded="true" />
-            <element signature="e#1092#1093#0" expanded="true" />
-            <element signature="e#1128#1129#0" expanded="true" />
-            <element signature="e#1333#1334#0" expanded="true" />
-            <element signature="e#1370#1371#0" expanded="true" />
-            <element signature="e#1583#1584#0" expanded="true" />
-            <element signature="e#1622#1623#0" expanded="true" />
+            <element signature="e#884#885#0" expanded="false" />
+            <element signature="e#1092#1093#0" expanded="false" />
+            <element signature="e#1128#1129#0" expanded="false" />
+            <element signature="e#1333#1334#0" expanded="false" />
+            <element signature="e#1370#1371#0" expanded="false" />
+            <element signature="e#1583#1584#0" expanded="false" />
+            <element signature="e#1622#1623#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1565,9 +1558,28 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/edu/ssau/gasstation/GUI/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="15" column="45" lean-forward="false" selection-start-line="15" selection-start-column="45" selection-end-line="15" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/edu/ssau/gasstation/GUI/view/mainWindow.fxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="37" column="31" lean-forward="false" selection-start-line="37" selection-start-column="31" selection-end-line="37" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/edu/ssau/gasstation/DB/DBHelper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
+        <state relative-caret-position="-862">
           <caret line="51" column="0" lean-forward="true" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
           <folding>
             <marker date="1482047996108" expanded="true" signature="1116:1133" ph="SELECT * FRO... car" />
@@ -1589,10 +1601,33 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/edu/ssau/gasstation/GUI/components/delete.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/edu/ssau/gasstation/GUI/controllers/DBWindowController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-792">
-          <caret line="68" column="25" lean-forward="false" selection-start-line="68" selection-start-column="25" selection-end-line="68" selection-end-column="25" />
+        <state relative-caret-position="35">
+          <caret line="28" column="4" lean-forward="false" selection-start-line="28" selection-start-column="4" selection-end-line="29" selection-end-column="37" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/edu/ssau/gasstation/GUI/components/DeletButtonCell.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="35" column="99" lean-forward="true" selection-start-line="35" selection-start-column="12" selection-end-line="35" selection-end-column="99" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/edu/ssau/gasstation/GUI/controllers/mainWindowController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="290">
+          <caret line="37" column="28" lean-forward="true" selection-start-line="37" selection-start-column="28" selection-end-line="37" selection-end-column="28" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

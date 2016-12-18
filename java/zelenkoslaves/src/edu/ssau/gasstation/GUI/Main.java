@@ -12,8 +12,8 @@ import javafx.stage.Stage;
 public class Main extends Application{
     @Override
     public void start(Stage primaryStage) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("view/DBWindow.fxml"));
-        primaryStage.setTitle("Управление справочниками");
+        Parent root = FXMLLoader.load(getClass().getResource("view/mainWindow.fxml"));
+        primaryStage.setTitle("West Coast AZS");
         primaryStage.setScene(new Scene(root));
         primaryStage.show();
     }
