@@ -39,11 +39,11 @@ public class Cell {
     }
 
     public int getHeight(){
-        return GameField.CELL_SIZE;
+        return ModelField.CELL_SIZE;
     }
 
     public int getWidth(){
-        return GameField.CELL_SIZE;
+        return ModelField.CELL_SIZE;
     }
 
 
