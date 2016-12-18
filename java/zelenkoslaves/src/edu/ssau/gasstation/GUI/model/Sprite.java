@@ -8,26 +8,32 @@ import java.io.File;
  * Created by Sasha on 18.12.2016.
  */
 public enum Sprite {
-    EMPTY("empty"),
-    CAR("car"),
-    ENTER("enter"),
-    EXIT("exit"),
-    CASH("cash"),
-    TANK("tank"),
-    TRK("trk");
+    EMPTY("empty", 0),
+    CAR("car", 1),
+    ENTER("enter",5),
+    EXIT("exit", -1),
+    CASH("cash",3 ),
+    TANK("tank", 4),
+    TRK("trk", 2);
 
     private BufferedImage sprite;
-
-    Sprite(String element){
+    private int state;
+    Sprite(String element, int state){
         try {
+            this.state = state;
             this.sprite = ImageIO.read(new File("src/edu/ssau/gasstation/GUI/view/icons/"+element+".png"));
         } catch (Exception e){
             this.sprite = null;
+            this.state = -2;
             e.printStackTrace();
         }
     }
 
     public BufferedImage getSprite() {
         return sprite;
+    }
+
+    public int getState() {
+        return state;
     }
 }
