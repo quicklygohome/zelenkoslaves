@@ -2,6 +2,8 @@ package edu.ssau.gasstation.GUI.components;
 
 import edu.ssau.gasstation.DB.DBHelper;
 import edu.ssau.gasstation.GUI.model.CarRecord;
+import edu.ssau.gasstation.GUI.model.FuelRecord;
+import edu.ssau.gasstation.GUI.model.Record;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.geometry.Insets;
@@ -15,7 +17,7 @@ import java.sql.SQLException;
 /**
  * Created by andrey on 12.12.16.
  */
-public class DeletButtonCell extends TableCell<CarRecord, Boolean> {
+public class DeletButtonCell extends TableCell<Record, Boolean> {
     private final Button cellButton = new Button();
     private ObservableList data;
 
@@ -38,11 +40,17 @@ public class DeletButtonCell extends TableCell<CarRecord, Boolean> {
             cellButton.graphicProperty().setValue(pic);
             cellButton.setPrefSize(17, 17);
             cellButton.setOnAction( ( ActionEvent event ) -> {
-                CarRecord currentCar = DeletButtonCell.this.getTableView().getItems().get(DeletButtonCell.this.getIndex());
+                Record current = DeletButtonCell.this.getTableView().getItems().get(DeletButtonCell.this.getIndex());
                 DBHelper dbh = new DBHelper();
                 try {
-                    dbh.deleteCar(currentCar.getRecordId());
-                    data.remove(currentCar);
+                    if(current instanceof CarRecord) {
+                        dbh.deleteCar(current.getRecordId());
+                        data.remove(current);
+                    }
+                    else if(current instanceof FuelRecord){
+                        dbh.deleteFuel(current.getRecordId());
+                        data.remove(current);
+                    }
                 } catch (SQLException e) {
                     e.printStackTrace();
                 }

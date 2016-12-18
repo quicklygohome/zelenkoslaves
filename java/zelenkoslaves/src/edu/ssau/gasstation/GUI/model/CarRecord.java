@@ -7,7 +7,7 @@ import javafx.beans.property.SimpleStringProperty;
 /**
  * Created by andrey on 05.12.16.
  */
-public class CarRecord {
+public class CarRecord implements Record {
     private final SimpleIntegerProperty recordId;
     private final SimpleStringProperty carType;
     private final SimpleStringProperty fuelType;

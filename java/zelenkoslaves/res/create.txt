@@ -1,0 +1,21 @@
+DROP TABLE car;
+
+CREATE TABLE `car` (
+  `car_id` int(11) NOT NULL AUTO_INCREMENT,
+  `car_name` char(30) DEFAULT NULL,
+  `car_tank_volume` double DEFAULT NULL,
+  `fuel_id` int(11) NOT NULL,
+  PRIMARY KEY (`car_id`),
+  KEY `fuel_id` (`fuel_id`),
+  CONSTRAINT FOREIGN KEY (`fuel_id`) REFERENCES `fuel` (`fuel_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8
+
+DROP TABLE fuel;
+
+CREATE TABLE `fuel` (
+  `fuel_id` int(11) NOT NULL AUTO_INCREMENT,
+  `fuel_name` char(7) DEFAULT NULL,
+  `fuel_cost` double DEFAULT NULL,
+  PRIMARY KEY (`fuel_id`),
+  UNIQUE KEY `fuel_name` (`fuel_name`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8

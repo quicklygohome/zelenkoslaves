@@ -1,20 +1,10 @@
 package edu.ssau.gasstation.GUI;
 
-import com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException;
-import edu.ssau.gasstation.DB.DBHelper;
-import edu.ssau.gasstation.XMLHelper.XMLParser;
-import edu.ssau.gasstation.topology.Topology;
-import edu.ssau.gasstation.topology.TopologyItem;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-
-import javax.xml.stream.XMLStreamException;
-import java.io.File;
-import java.sql.ResultSet;
-import java.sql.SQLException;
 
 /**
  * Created by andrey on 05.12.16.
@@ -22,7 +12,7 @@ import java.sql.SQLException;
 public class Main extends Application{
     @Override
     public void start(Stage primaryStage) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("view/db_window.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("view/DBWindow.fxml"));
         primaryStage.setTitle("Управление справочниками");
         primaryStage.setScene(new Scene(root));
         primaryStage.show();

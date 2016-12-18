@@ -6,6 +6,7 @@ import edu.ssau.gasstation.GUI.components.EditButtonCell;
 
 import edu.ssau.gasstation.GUI.model.CarRecord;
 import edu.ssau.gasstation.GUI.model.FuelRecord;
+import edu.ssau.gasstation.GUI.model.Record;
 import javafx.beans.property.SimpleBooleanProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -24,6 +25,7 @@ import java.sql.SQLException;
  * Created by andrey on 04.12.16.
  */
 public class DBWindowController {
+    //Table CAR
     @FXML
     private TableView<CarRecord> car;
     @FXML
@@ -33,26 +35,38 @@ public class DBWindowController {
     @FXML
     private TableColumn<CarRecord, String> carFuelType;
     @FXML
-    private TableColumn<CarRecord, Boolean> editCar;
+    private TableColumn<Record, Boolean> editCar;
     @FXML
-    private TableColumn<CarRecord, Boolean> deleteCar;
+    private TableColumn<Record, Boolean> deleteCar;
     @FXML
     private Button addCar;
-    @FXML
-    private Button addFuel;
     @FXML
     private TextField addCarName;
     @FXML
     private TextField addTankVolume;
-    private ObservableList<CarRecord> carList = FXCollections.observableArrayList();
-    private ObservableList<FuelRecord> fuelList = FXCollections.observableArrayList();
     @FXML
-    private ChoiceBox<FuelRecord> addFuelType;
+    private ChoiceBox<FuelRecord> addCarFuelType;
+    private ObservableList<CarRecord> carList = FXCollections.observableArrayList();
+    //Table FUEL
+    @FXML
+    private TableView<FuelRecord> fuel;
+    @FXML
+    private TableColumn<FuelRecord, String> fuelType;
+    @FXML
+    private TableColumn<FuelRecord, Double> fuelCost;
+    @FXML
+    private TableColumn<Record, Boolean> editFuel;
+    @FXML
+    private TableColumn<Record, Boolean> deleteFuel;
+    @FXML
+    private TextField addFuelName;
+    @FXML
+    private TextField addFuelCost;
+    @FXML
+    private Button addFuel;
+    private ObservableList<FuelRecord> fuelList = FXCollections.observableArrayList();
+
     private DBHelper dbh;
-
-    /*private Stage primaryStage;
-    private Pane rootLayout;*/
-
 
     @FXML
     private void initialize() {
@@ -66,7 +80,7 @@ public class DBWindowController {
         initFuelList();
         initButtons();
         initTextFields();
-        addFuelType.setItems(fuelList);
+        addCarFuelType.setItems(fuelList);
     }
 
     private void initButtons(){
@@ -104,19 +118,14 @@ public class DBWindowController {
             car.setItems(carList);
             addCar.setOnAction(event -> {
                 try {
-                    if(addCarName.getText() != "" && addTankVolume.getText() != "" && addFuelType.getValue() != null) {
+                    if(!addCarName.getText().equals("") && !addTankVolume.getText().equals("") && addCarFuelType.getValue() != null) {
                         int id = dbh.getMaxID("car");
-                        CarRecord cr = new CarRecord(id + 1, addCarName.getText(), addFuelType.getValue().getFuelName(), Double.valueOf(addTankVolume.getText()));
+                        CarRecord cr = new CarRecord(id + 1, addCarName.getText(), addCarFuelType.getValue().getFuelName(), Double.valueOf(addTankVolume.getText()));
                         carList.add(cr);
                         dbh.insertCar(cr);
                     }
                     else{
-                        Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                        alert.setTitle("Information Dialog");
-                        alert.setHeaderText("Look, an Information Dialog");
-                        alert.setContentText("I have a great message for you!");
-
-                        alert.showAndWait();
+                        showAlert("Необходимо заполнить все поля.", "Ошибка");
                     }
                 } catch (SQLException e) {
                     e.printStackTrace();
@@ -137,33 +146,63 @@ public class DBWindowController {
                 int recordID = rs.getInt("fuel_id");
                 fuelList.add(new FuelRecord(recordID, name, fuelCost));
             }
-            System.out.println("get list of car");
+            fuelType.setCellValueFactory(new PropertyValueFactory<>("fuelName"));
+            fuelCost.setCellValueFactory(new PropertyValueFactory<>("fuelCost"));
+            fuel.setItems(fuelList);
+            editFuel.setCellValueFactory(param -> new SimpleBooleanProperty(param.getValue() != null));
+            editFuel.setCellFactory(param -> new EditButtonCell(carList));
+            deleteFuel.setCellValueFactory(param -> new SimpleBooleanProperty(param.getValue() != null));
+            deleteFuel.setCellFactory(param -> new DeletButtonCell(carList));
+            car.setItems(carList);
+            addFuel.setOnAction(event -> {
+                try {
+                    if(!addFuelName.getText().equals("") && !addFuelCost.getText().equals("")) {
+                        int id = dbh.getMaxID("fuel");
+                        FuelRecord fr = new FuelRecord(id + 1, addFuelName.getText(), Double.valueOf(addFuelCost.getText()));
+                        fuelList.add(fr);
+                        dbh.insertFuel(fr);
+                    }
+                    else{
+                        showAlert("Необходимо заполнить все поля.", "Ошибка");
+                    }
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            });
         } catch (SQLException e) {
             e.printStackTrace();
         }
     }
 
     private void initTextFields(){
-        String numberMatcher = "(\\d{1,2})(\\.\\d{0,3})?";
-        //t1 - новый текст, s - старый текст.
-        addTankVolume.textProperty().addListener((observable, oldValue, newValue) -> {
+        setOnlyDouble(addTankVolume, 3);
+        setOnlyDouble(addFuelCost, 2);
+    }
+
+    private void setOnlyDouble(TextField field, int count){
+        String numberMatcher = "(\\d{1,2})(\\.\\d{0," + count + "})?";
+        field.textProperty().addListener((observable, oldValue, newValue) -> {
             if (!newValue.isEmpty()) {
                 if (!newValue.matches(numberMatcher)) {
-                    addTankVolume.setText(oldValue);
+                    field.setText(oldValue);
                 } else {
                     try {
-                        // тут можете парсить строку как захотите
-                        addTankVolume.setText(newValue);
+                        field.setText(newValue);
                     } catch (NumberFormatException e) {
-                        addTankVolume.setText(oldValue);
+                        field.setText(oldValue);
                     }
                 }
             }
         });
     }
 
-    private void initDataFactory(){
+   private void showAlert(String text, String header){
+       Alert alert = new Alert(Alert.AlertType.ERROR);
+       alert.setTitle("Невозможно выполнить операцию");
+       alert.setHeaderText(header);
+       alert.setContentText(text);
 
-    }
+       alert.showAndWait();
+   }
 }
 

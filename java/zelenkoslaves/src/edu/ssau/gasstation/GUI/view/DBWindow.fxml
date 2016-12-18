@@ -1,18 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
 <?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Tab?>
-<?import javafx.scene.control.TabPane?>
-<?import javafx.scene.control.TableColumn?>
-<?import javafx.scene.control.TableView?>
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.Pane?>
-<?import javafx.scene.layout.VBox?>
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.ssau.gasstation.GUI.controllers.DBWindowController">
    <children>
@@ -48,7 +38,7 @@
                                  <HBox.margin>
                                     <Insets top="5.0" />
                                  </HBox.margin></TextField>
-                              <ChoiceBox fx:id="addFuelType" prefWidth="159.0">
+                              <ChoiceBox fx:id="addCarFuelType" prefWidth="159.0">
                                  <HBox.margin>
                                     <Insets top="5.0" />
                                  </HBox.margin></ChoiceBox>
@@ -68,7 +58,7 @@
                       <TableView id="myTable" fx:id="fuel" prefHeight="300.0" prefWidth="600.0">
                           <columns>
                               <TableColumn fx:id="fuelType" prefWidth="238" text="Тип топлива" />
-                              <TableColumn fx:id="cost" prefWidth="238" text="Цена" />
+                              <TableColumn fx:id="fuelCost" prefWidth="238" text="Цена" />
                               <TableColumn fx:id="editFuel" prefWidth="39" />
                               <TableColumn fx:id="deleteFuel" prefWidth="39" />
                               <TableColumn prefWidth="15" />

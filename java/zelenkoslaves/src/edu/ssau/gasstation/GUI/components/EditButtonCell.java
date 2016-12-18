@@ -2,6 +2,8 @@ package edu.ssau.gasstation.GUI.components;
 
 import edu.ssau.gasstation.DB.DBHelper;
 import edu.ssau.gasstation.GUI.model.CarRecord;
+import edu.ssau.gasstation.GUI.model.FuelRecord;
+import edu.ssau.gasstation.GUI.model.Record;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.geometry.Insets;
@@ -17,7 +19,7 @@ import java.sql.SQLException;
 /**
  * Created by andrey on 05.12.16.
  */
-public class EditButtonCell extends TableCell<CarRecord, Boolean>{
+public class EditButtonCell extends TableCell<Record, Boolean>{
     private final Button cellButton = new Button();
     private ObservableList data;
 
@@ -40,17 +42,19 @@ public class EditButtonCell extends TableCell<CarRecord, Boolean>{
             cellButton.graphicProperty().setValue(pic);
             cellButton.setPrefSize(17, 17);
             cellButton.setOnAction( ( ActionEvent event ) -> {
-                CarRecord currentCar = (CarRecord) EditButtonCell.this.getTableView().getItems().get(EditButtonCell.this.getIndex());
+                Record current = EditButtonCell.this.getTableView().getItems().get(EditButtonCell.this.getIndex());
                 DBHelper dbh = new DBHelper();
-                //dbh.updateCar(currentCar.getCarType());
-                //dbh.executeQuery("")
                 try {
-                    dbh.updateCar(currentCar.getCarType(), currentCar.getTankVolume(), dbh.getFuelID(currentCar.getFuelType()), currentCar.getRecordId());
+                    if(current instanceof CarRecord) {
+                        dbh.updateCar(((CarRecord)current).getCarType(), ((CarRecord)current).getTankVolume(),
+                                dbh.getFuelID(((CarRecord)current).getFuelType()), current.getRecordId());
+                    }
+                    else if(current instanceof FuelRecord){
+                        dbh.updateFuel(((FuelRecord)current).getFuelName(), ((FuelRecord)current).getFuelCost(), current.getRecordId());
+                    }
                 } catch (SQLException e) {
                     e.printStackTrace();
                 }
-                //todo проверка и отправка изменений в БД
-                data.add(new CarRecord(2, "fa", "dsa", 10.0));
             } );
             cellButton.setPrefSize(30.0, 30.0);
             setGraphic( cellButton );

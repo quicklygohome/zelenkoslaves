@@ -1,6 +1,7 @@
 package edu.ssau.gasstation.DB;
 
 import edu.ssau.gasstation.GUI.model.CarRecord;
+import edu.ssau.gasstation.GUI.model.FuelRecord;
 
 import java.io.UnsupportedEncodingException;
 import java.nio.charset.Charset;
@@ -49,7 +50,9 @@ public class DBHelper {
         return rs.getInt("max(" + table + "_id)");
     }
 
-    public void insertFuel(String fuel_name, double fuel_cost) throws SQLException {
+    public void insertFuel(FuelRecord fr) throws SQLException {
+        String fuel_name = fr.getFuelName();
+        double fuel_cost = fr.getFuelCost();
         String query = "INSERT INTO fuel(fuel_name, fuel_cost) VALUES(?, ?);";
         PreparedStatement ps = connect.prepareStatement(query);
         ps.setString(1, new String(fuel_name.getBytes(), Charset.forName("utf8")));
@@ -91,7 +94,9 @@ public class DBHelper {
         ps.setString(1, new String(car_name.getBytes(), Charset.forName("utf8")));
         ps.setDouble(2, car_tank_volume);
         ps.setInt(3, fuel_id);
+        ps.setInt(4, car_id);
         ps.execute();
+        System.out.println("Update car with car_id=" + car_id);
     }
     public void deleteCar(int carID) throws SQLException {
         String query = "DELETE FROM car WHERE(car_id = ?);";
