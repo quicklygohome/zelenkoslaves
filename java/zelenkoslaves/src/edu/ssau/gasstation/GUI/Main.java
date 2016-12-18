@@ -5,7 +5,6 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
 import java.io.File;
@@ -18,30 +17,22 @@ import java.sql.SQLException;
 public class Main extends Application{
     @Override
     public void start(Stage primaryStage) throws Exception{
-        /*Parent root = FXMLLoader.load(getClass().getResource("view/db_window.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("view/db_window.fxml"));
         primaryStage.setTitle("Управление справочниками");
         primaryStage.setScene(new Scene(root));
-        primaryStage.show();*/
-
-        Pane modelView = FXMLLoader.load(getClass().getResource("vew/modelWindow.fxml"));
-        primaryStage.setTitle("Модель");
-        primaryStage.setScene(new Scene(modelView));
         primaryStage.show();
-        System.out.println("panechilds:" + modelView.getChildren().size());
-
     }
 
 
     public static void main(String[] args) {
-        /*DBHelper db = new DBHelper();
+        DBHelper db = new DBHelper();
         try {
             //ResultSet rs = db.executeQuery("INSERT INTO fuel (fuel_name) VALUES(АИ-76);");
             boolean succes = db.insertFuel("АИ-76", 15.0);
             db.executeQuery("SELECT * FROM fuel;");
         } catch (SQLException e) {
             e.printStackTrace();
-        }*/
-        //launch(args);
-        Application.launch(Main.class,(java.lang.String)null);
+        }
+        launch(args);
     }
 }
