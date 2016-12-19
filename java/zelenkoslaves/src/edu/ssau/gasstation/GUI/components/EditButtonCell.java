@@ -6,9 +6,11 @@ import edu.ssau.gasstation.GUI.model.FuelRecord;
 import edu.ssau.gasstation.GUI.model.Record;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableCell;
+import javafx.scene.control.TableColumn;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
@@ -46,8 +48,9 @@ public class EditButtonCell extends TableCell<Record, Boolean>{
                 DBHelper dbh = new DBHelper();
                 try {
                     if(current instanceof CarRecord) {
-                        dbh.updateCar(((CarRecord)current).getCarType(), ((CarRecord)current).getTankVolume(),
-                                dbh.getFuelID(((CarRecord)current).getFuelType()), current.getRecordId());
+                        this.getTableView().getColumns().get(0).setText("MAGIC");
+                        //dbh.updateCar(((CarRecord)current).getCarType(), ((CarRecord)current).getTankVolume(),
+                          //      dbh.getFuelID(((CarRecord)current).getFuelType()), current.getRecordId());
                     }
                     else if(current instanceof FuelRecord){
                         dbh.updateFuel(((FuelRecord)current).getFuelName(), ((FuelRecord)current).getFuelCost(), current.getRecordId());

@@ -9,6 +9,10 @@ public class Tank implements TopologyItem{
     private double curentVolume;
     private double criticalVolume;
 
+    public Tank(){
+        fuelID = -1;
+    }
+
     public Tank(int fuelID) {
         this.fuelID = fuelID;
         this.totalVolume = 20.0;

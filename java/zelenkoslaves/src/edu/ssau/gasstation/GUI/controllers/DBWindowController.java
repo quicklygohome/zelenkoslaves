@@ -10,6 +10,7 @@ import edu.ssau.gasstation.GUI.model.Record;
 import javafx.beans.property.SimpleBooleanProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.geometry.Insets;
 import javafx.scene.control.*;
@@ -68,6 +69,10 @@ public class DBWindowController {
 
     private DBHelper dbh;
 
+    /*private Stage primaryStage;
+    private Pane rootLayout;*/
+
+
     @FXML
     private void initialize() {
         dbh = new DBHelper();
@@ -84,14 +89,14 @@ public class DBWindowController {
     }
 
     private void initButtons(){
-        ImageView pic = new ImageView(new Image(getClass().getResourceAsStream("add.png")));
+        ImageView pic = new ImageView(new Image(getClass().getResourceAsStream("images/add.png")));
         pic.setFitHeight(23);
         pic.setFitWidth(23);
         addCar.paddingProperty().setValue(new Insets(2, 2, 2, 2));
         addCar.graphicProperty().setValue(pic);
         addCar.setPrefSize(16, 16);
         addFuel.paddingProperty().setValue(new Insets(2, 2, 2, 2));
-        pic = new ImageView(new Image(getClass().getResourceAsStream("add.png")));
+        pic = new ImageView(new Image(getClass().getResourceAsStream("images/add.png")));
         pic.setFitHeight(23);
         pic.setFitWidth(23);
         addFuel.graphicProperty().setValue(pic);
@@ -109,6 +114,14 @@ public class DBWindowController {
                 carList.add(new CarRecord(recordID, name, fuelType, tankVolume));
             }
             tankVolume.setCellValueFactory(new PropertyValueFactory<>("tankVolume"));
+            tankVolume.setEditable(true);
+            tankVolume.setOnEditCommit(new EventHandler<TableColumn.CellEditEvent<CarRecord, Double>>() {
+                @Override
+                public void handle(TableColumn.CellEditEvent<CarRecord, Double> t) {
+                    (t.getTableView().getItems().get(
+                            t.getTablePosition().getRow())).setTankVolume(t.getNewValue());
+                }
+            });
             carType.setCellValueFactory(new PropertyValueFactory<>("carType"));
             carFuelType.setCellValueFactory(new PropertyValueFactory<>("fuelType"));
             editCar.setCellValueFactory(param -> new SimpleBooleanProperty(param.getValue() != null));
@@ -131,7 +144,7 @@ public class DBWindowController {
                     e.printStackTrace();
                 }
             });
-
+            car.edit(0, carType);
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -175,25 +188,8 @@ public class DBWindowController {
     }
 
     private void initTextFields(){
-        setOnlyDouble(addTankVolume, 3);
-        setOnlyDouble(addFuelCost, 2);
-    }
-
-    private void setOnlyDouble(TextField field, int count){
-        String numberMatcher = "(\\d{1,2})(\\.\\d{0," + count + "})?";
-        field.textProperty().addListener((observable, oldValue, newValue) -> {
-            if (!newValue.isEmpty()) {
-                if (!newValue.matches(numberMatcher)) {
-                    field.setText(oldValue);
-                } else {
-                    try {
-                        field.setText(newValue);
-                    } catch (NumberFormatException e) {
-                        field.setText(oldValue);
-                    }
-                }
-            }
-        });
+        addTextChangeListener(addFuelCost, "(\\d{1,2})(\\.\\d{0,2})?");
+        addTextChangeListener(addTankVolume, "(\\d{1,2})(\\.\\d{0,1})?");
     }
 
    private void showAlert(String text, String header){
@@ -203,6 +199,22 @@ public class DBWindowController {
        alert.setContentText(text);
 
        alert.showAndWait();
+   }
+
+   private void addTextChangeListener(TextField field, String mutcher){
+       field.textProperty().addListener((observable, oldValue, newValue) -> {
+           if (!newValue.isEmpty()) {
+               if (!newValue.matches(mutcher)) {
+                   field.setText(oldValue);
+               } else {
+                   try {
+                       field.setText(newValue);
+                   } catch (NumberFormatException e) {
+                       field.setText(oldValue);
+                   }
+               }
+           }
+       });
    }
 }
 

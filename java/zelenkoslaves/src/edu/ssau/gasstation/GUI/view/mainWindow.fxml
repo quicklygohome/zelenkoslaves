@@ -3,28 +3,27 @@
 <?import java.lang.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
-<?import javafx.scene.control.TableColumn?>
-<?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.ssau.gasstation.GUI.controllers.mainWindowController">
+<BorderPane focusTraversable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-border-color: black;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.ssau.gasstation.GUI.controllers.MainWindowController">
    <top>
-      <MenuBar BorderPane.alignment="CENTER">
+      <MenuBar fx:id="menuBar" BorderPane.alignment="CENTER">
         <menus>
-          <Menu mnemonicParsing="false" text="File">
+          <Menu mnemonicParsing="false" text="Файл">
             <items>
-              <MenuItem mnemonicParsing="false" text="Close" />
+              <MenuItem mnemonicParsing="false" text="Создать" fx:id="create"/>
+                <MenuItem mnemonicParsing="false" text="Сохранить" />
+                <MenuItem mnemonicParsing="false" text="Выход" />
             </items>
           </Menu>
-          <Menu mnemonicParsing="false" text="Edit">
-            <items>
-              <MenuItem mnemonicParsing="false" text="Delete" />
-            </items>
+          <Menu fx:id="dbButton" mnemonicParsing="false">
           </Menu>
           <Menu mnemonicParsing="false" text="Help">
             <items>
@@ -35,13 +34,21 @@
       </MenuBar>
    </top>
    <left>
-      <ListView fx:id="itemList" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+      <VBox alignment="TOP_CENTER" style="-fx-border-color: black;" BorderPane.alignment="CENTER">
+         <children>
+            <Label text="Элементы топологии" />
+            <ListView fx:id="itemList" focusTraversable="false" pickOnBounds="false" prefHeight="1000" prefWidth="300" />
+         </children>
+      </VBox>
    </left>
-   <right>
-      <Pane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
-   </right>
    <center>
-       <TableView fx:id="constructorField" blendMode="SRC_ATOP" prefHeight="371.0" prefWidth="323.0"
-                  BorderPane.alignment="CENTER"/>
+      <Pane fx:id="constructor">
+      </Pane>
    </center>
+   <right>
+      <VBox fx:id="settings" alignment="TOP_CENTER" prefHeight="200.0" prefWidth="300.0" style="-fx-border-color: black;" BorderPane.alignment="CENTER">
+         <children>
+            <Label alignment="TOP_CENTER" text="Настройки" textAlignment="CENTER" />
+         </children></VBox>
+   </right>
 </BorderPane>

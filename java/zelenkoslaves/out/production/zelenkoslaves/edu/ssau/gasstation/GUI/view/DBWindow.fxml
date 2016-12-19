@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
 <?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
@@ -12,13 +13,13 @@
                <content>
                   <VBox>
                      <children>
-                        <TableView id="myTable" fx:id="car" prefHeight="300.0" prefWidth="600.0" stylesheets="@style.css">
+                        <TableView editable="true" id="myTable" fx:id="car" prefHeight="300.0" prefWidth="600.0" stylesheets="@style.css">
                           <columns>
-                            <TableColumn fx:id="carType" prefWidth="159" text="Марка автомобиля" />
-                            <TableColumn fx:id="tankVolume" prefWidth="159" text="Объем бака" />
-                            <TableColumn fx:id="carFuelType" prefWidth="159" text="Тип топлива" />
-                            <TableColumn fx:id="editCar" prefWidth="39" />
-                            <TableColumn fx:id="deleteCar" prefWidth="39" />
+                            <TableColumn fx:id="carType" editable="true" prefWidth="159" sortable="false" text="Марка автомобиля" />
+                            <TableColumn fx:id="tankVolume" editable="true" prefWidth="159" text="Объем бака" />
+                            <TableColumn fx:id="carFuelType" editable="true" prefWidth="159" text="Тип топлива" />
+                            <TableColumn fx:id="editCar" editable="true" prefWidth="39" />
+                            <TableColumn fx:id="deleteCar" editable="true" prefWidth="39" />
                           </columns>
                            <padding>
                               <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />

@@ -4,6 +4,7 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
 /**
@@ -15,25 +16,12 @@ public class Main extends Application{
         Parent root = FXMLLoader.load(getClass().getResource("view/mainWindow.fxml"));
         primaryStage.setTitle("West Coast AZS");
         primaryStage.setScene(new Scene(root));
+        primaryStage.setMaximized(true);
         primaryStage.show();
     }
 
 
     public static void main(String[] args) {
-        /*DBHelper db = new DBHelper();
-        try {
-            //TopologyItem ti = XMLParser.getTopologyFromFile("result.xml").getTopologyItem(1, 1);
-            //ResultSet rs = db.executeQuery("INSERT INTO fuel (fuel_name) VALUES(АИ-76);");
-            int id = db.getFuelID("АИ-96");
-            db.executeQuery("SELECT * FROM fuel;");
-        }catch (MySQLIntegrityConstraintViolationException e){
-            //todo отобразить окно с сообщение о дублировании записи
-        }
-        catch (SQLException e) {
-            e.printStackTrace();
-        } /*catch (XMLStreamException e) {
-            e.printStackTrace();
-        }*/
         launch(args);
     }
 }

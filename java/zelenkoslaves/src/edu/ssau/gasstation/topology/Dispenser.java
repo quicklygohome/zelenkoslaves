@@ -5,6 +5,10 @@ package edu.ssau.gasstation.topology;
 public class Dispenser implements TopologyItem{
     private int fuelID;
 
+    public Dispenser(){
+        fuelID = -1;
+    }
+
     public Dispenser(int fuelID) {
         this.fuelID = fuelID;
     }
