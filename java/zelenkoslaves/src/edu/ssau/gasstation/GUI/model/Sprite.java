@@ -21,7 +21,7 @@ public enum Sprite {
     Sprite(String element, int state){
         try {
             this.state = state;
-            this.sprite = ImageIO.read(new File("src/edu/ssau/gasstation/GUI/view/icons/"+element+".png"));
+            this.sprite = ImageIO.read(new File("D:\\Synchronization\\Git\\zelenkoslaves\\java\\zelenkoslaves\\src\\edu\\ssau\\gasstation\\GUI\\view\\icons\\"+element+".png"));
         } catch (Exception e){
             this.sprite = null;
             this.state = -2;
